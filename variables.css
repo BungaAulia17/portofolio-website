@@ -1,0 +1,26 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg:    #F9C0D8;
+      --bg2:   #F5A8C8;
+      --bg3:   #F090B8;
+      --card:  #FDE0EE;
+      --rose:  #C0185A;
+      --rose2: #E0306A;
+      --pink:  #F06090;
+      --blush: #F9A0C0;
+      --mauve: #A01850;
+      --text:  #1A0010;
+      --muted: #5A1838;
+      --white: #FDE0EE;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'Inter',system-ui,sans-serif;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      background: linear-gradient(135deg, #FFD6E8 0%, #FFAFD0 20%, #FFB8D8 40%, #FFACE4 60%, #FFBFE0 80%, #FFD0E8 100%);
+      background-size: 400% 400%;
+      animation: auroraShift 12s ease infinite;
+      color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.75;overflow-x:hidden;font-weight:400
+    }

@@ -1,0 +1,70 @@
+/* ── AURORA BACKGROUND ── */
+    @keyframes auroraShift{
+      0%{background-position:0% 50%}
+      25%{background-position:100% 0%}
+      50%{background-position:100% 100%}
+      75%{background-position:0% 100%}
+      100%{background-position:0% 50%}
+    }
+
+    /* ── FALLING HEARTS & STARS LAYER ── */
+    #magic-layer{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      pointer-events:none;z-index:0;overflow:hidden;
+    }
+    .magic-item{
+      position:absolute;top:-60px;
+      animation:magicFall linear infinite;
+      opacity:0;
+      user-select:none;
+    }
+    @keyframes magicFall{
+      0%{transform:translateY(-60px) rotate(0deg) scale(0.6);opacity:0}
+      10%{opacity:1}
+      90%{opacity:.7}
+      100%{transform:translateY(110vh) rotate(720deg) scale(1);opacity:0}
+    }
+
+    /* ── SPARKLE OVERLAY ── */
+    .sparkle{
+      position:absolute;
+      pointer-events:none;
+      animation:sparklePop .6s ease-out forwards;
+    }
+    @keyframes sparklePop{
+      0%{transform:scale(0) rotate(0deg);opacity:1}
+      100%{transform:scale(1.5) rotate(180deg);opacity:0}
+    }
+
+    /* ── GLITTER CURSOR TRAIL ── */
+    .cursor-dot{
+      position:fixed;width:8px;height:8px;border-radius:50%;
+      background:radial-gradient(circle,#FFB8D0,#FF80B0);
+      pointer-events:none;z-index:9999;
+      animation:dotFade .8s ease-out forwards;
+    }
+    @keyframes dotFade{
+      0%{opacity:1;transform:scale(1)}
+      100%{opacity:0;transform:scale(0)}
+    }
+
+    /* ── GLOWING SECTION DIVIDERS ── */
+    section::before{
+      content:'';display:block;height:3px;
+      background:linear-gradient(90deg,transparent,rgba(224,48,106,.35),#E0306A,rgba(224,48,106,.35),transparent);
+      margin-bottom:0;
+    }
+
+    /* ── SHIMMER ON CARDS ── */
+    .cert-card::after,.project-card::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,0.18) 50%,transparent 70%);
+      background-size:300% 100%;
+      border-radius:inherit;
+      animation:cardShimmer 4s ease-in-out infinite;
+      pointer-events:none;z-index:1;
+    }
+    @keyframes cardShimmer{
+      0%{background-position:150% 0}
+      100%{background-position:-150% 0}
+    }
